@@ -1,0 +1,18 @@
+{% extends "outline/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>Search Results for "{{ query }}"</h1>
+
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{% url 'topic_page' title=topic %}">{{ topic }}</a></li>
+        {% empty %}
+            <li>No topics found</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
